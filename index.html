@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Frontend Mentor | Age calculator app</title>
+  </head>
+  <body>
+    <section class="calculator-wrapper">
+      <form class="calculator-form" action="">
+        <div class="text-field-wrapper">
+          <div class="text-field day">
+            <label for="day-input">Day</label>
+            <input type="text" maxlength="2" placeholder="DD" id="day-input" />
+            <span class="error-message"></span>
+          </div>
+          <div class="text-field month">
+            <label for="month-input">Month</label>
+            <input
+              type="text"
+              maxlength="2"
+              placeholder="MM"
+              id="month-input"
+            />
+            <span class="error-message"></span>
+          </div>
+          <div class="text-field year">
+            <label for="year-input">Year</label>
+            <input
+              type="text"
+              maxlength="4"
+              placeholder="YYYY"
+              id="year-input"
+            />
+            <span class="error-message"></span>
+          </div>
+        </div>
+
+        <div class="btn-submit-wrapper">
+          <button type="submit">
+            <img src="./images/icon-arrow.svg" alt="" />
+          </button>
+          <span title="divider-line"></span>
+        </div>
+      </form>
+
+      <div class="calculator-result">
+        <p><span class="year-text">- -</span>years</p>
+        <p><span class="month-text">- -</span>months</p>
+        <p><span class="day-text">- -</span>days</p>
+      </div>
+    </section>
+
+    <script type="module">
+      import * as dateFns from "https://cdn.jsdelivr.net/npm/date-fns@2.30.0/+esm";
+
+      const dayInput = document.querySelector("#day-input");
+      const monthInput = document.querySelector("#month-input");
+      const yearInput = document.querySelector("#year-input");
+
+      const dayInputErrorMessage = document.querySelector(
+        "#day-input + .error-message"
+      );
+      const monthInputErrorMessage = document.querySelector(
+        "#month-input + .error-message"
+      );
+      const yearInputErrorMessage = document.querySelector(
+        "#year-input + .error-message"
+      );
+
+      const dayTextResult = document.querySelector(".day-text");
+      const monthTextResult = document.querySelector(".month-text");
+      const yearTextResult = document.querySelector(".year-text");
+
+      let usingControlKey = false;
+      let fieldsValidated = true;
+      window.onkeyup = (e) => {
+        if (e.keyCode == 17) usingControlKey = false;
+      };
+
+      document.querySelectorAll(".text-field input").forEach((element) => {
+        element.addEventListener("focus", () => {
+          dayInputErrorMessage.textContent = "";
+          monthInputErrorMessage.textContent = "";
+          yearInputErrorMessage.textContent = "";
+
+          document
+            .querySelectorAll(".text-field")
+            .forEach((e) => e.classList.remove("error"));
+
+          fieldsValidated = true;
+        });
+
+        element.addEventListener("keydown", (e) => {
+          if (e.keyCode == 17) usingControlKey = true;
+          if (
+            !/\d/.test(e.key) &&
+            e.key !== "Backspace" &&
+            e.key !== "Tab" &&
+            !usingControlKey
+          ) {
+            e.preventDefault();
+          }
+        });
+      });
+
+      console.log(new Date().getYear() + 1900);
+
+      document
+        .querySelector(".calculator-form")
+        .addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          const errorMessages = {
+            FIELD_EMPTY: "This field is required",
+            mustBe: (name) => `Must be a valid ${name}`,
+          };
+
+          const isEmpty = (value) => value === "";
+
+          if (isEmpty(yearInput.value)) {
+            yearInputErrorMessage.textContent = errorMessages.FIELD_EMPTY;
+            fieldsValidated = false;
+          } else if (parseInt(yearInput.value) > new Date().getYear() + 1900) {
+            yearInputErrorMessage.textContent = errorMessages.mustBe("year");
+            fieldsValidated = false;
+          }
+          if (isEmpty(monthInput.value)) {
+            monthInputErrorMessage.textContent = errorMessages.FIELD_EMPTY;
+            fieldsValidated = false;
+          } else if (parseInt(monthInput.value) > 12) {
+            monthInputErrorMessage.textContent = errorMessages.mustBe("month");
+            fieldsValidated = false;
+          }
+
+          if (isEmpty(dayInput.value)) {
+            dayInputErrorMessage.textContent = errorMessages.FIELD_EMPTY;
+            fieldsValidated = false;
+          } else {
+            const isValidDay =
+              new Date(
+                parseInt(yearInput.value),
+                parseInt(monthInput.value),
+                0
+              ).getDate() >= parseInt(dayInput.value);
+
+            if (!isValidDay) {
+              dayInputErrorMessage.textContent = errorMessages.mustBe("day");
+              fieldsValidated = false;
+            }
+          }
+
+          if (fieldsValidated) {
+            const { years, months, days } = dateFns.intervalToDuration({
+              start: new Date(
+                parseInt(yearInput.value),
+                parseInt(monthInput.value),
+                parseInt(dayInput.value)
+              ),
+              end: new Date(),
+            });
+
+            dayTextResult.textContent = days;
+            monthTextResult.textContent = months;
+            yearTextResult.textContent = years;
+          } else {
+            document
+              .querySelectorAll(".text-field")
+              .forEach((e) => e.classList.add("error"));
+          }
+        });
+    </script>
+  </body>
+</html>
