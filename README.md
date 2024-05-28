@@ -20,11 +20,11 @@ Users should be able to:
 
 ### Solution
 
-- [Solution Link](https://your-solution-url.com)
-- [Live Site Link](https://your-live-site-url.com)
+- [Solution Link](https://www.frontendmentor.io/solutions/only-html-and-css-i1rsBUEQ8I)
+- [Live Site Link](https://haquanq.github.io/frontendmentor-age-calculator-app/)
 
 ![](./design/desktop-preview.jpg)
 
 ### Built with
 
-- Semantic HTML5 markup
+- HTML & CSS
