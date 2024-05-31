@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./main.css" />
+
+    <title>Frontend Mentor | Age calculator app</title>
+  </head>
+  <body>
+    <section class="calculator-wrapper">
+      <form class="calculator-form" action="">
+        <div class="text-field-wrapper">
+          <div class="text-field day">
+            <label for="day-input">Day</label>
+            <input type="text" maxlength="2" placeholder="DD" id="day-input" />
+            <span class="error-message"></span>
+          </div>
+          <div class="text-field month">
+            <label for="month-input">Month</label>
+            <input type="text" maxlength="2" placeholder="MM" id="month-input" />
+            <span class="error-message"></span>
+          </div>
+          <div class="text-field year">
+            <label for="year-input">Year</label>
+            <input type="text" maxlength="4" placeholder="YYYY" id="year-input" />
+            <span class="error-message"></span>
+          </div>
+        </div>
+
+        <div class="btn-submit-wrapper">
+          <button type="submit">
+            <img src="./assets/icon-arrow.svg" alt="" />
+          </button>
+          <span title="divider-line"></span>
+        </div>
+      </form>
+
+      <div class="calculator-result">
+        <p><span class="year-text">- -</span>years</p>
+        <p><span class="month-text">- -</span>months</p>
+        <p><span class="day-text">- -</span>days</p>
+      </div>
+    </section>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

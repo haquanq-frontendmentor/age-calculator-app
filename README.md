@@ -20,11 +20,38 @@ Users should be able to:
 
 ### Solution
 
-- [Solution Link](https://www.frontendmentor.io/solutions/only-html-and-css-i1rsBUEQ8I)
-- [Live Site Link](https://haquanq.github.io/frontendmentor-age-calculator-app/)
+- Built with: `HTML` `CSS` `JS`
 
-![](./design/desktop-preview.jpg)
+:link: [`Solution Link`](https://www.frontendmentor.io/solutions/only-html-and-css-i1rsBUEQ8I)
+:link: [`Live Site Link`](https://haquanq.github.io/fm-age-calculator-app/)
 
-### Built with
+![](./.docs/design/desktop-design.jpg)
+<br>
 
-- HTML & CSS
+## Working in `fm-age-calculator-app` repository
+
+### Packages being used
+
+- [`browser-sync`](https://github.com/BrowserSync/browser-sync)
+
+### Clone this project to your machine
+
+Make sure you have Git installed in your system, open new terminal, run the following command:
+
+```
+git clone https://github.com/haquanq/fm-age-calculator-app.git
+```
+
+Then, run `npm install` to install all dependencies.
+
+```
+npm install
+```
+
+### Development workflow
+
+In terminal, run `npm run dev` to start development server:
+
+```
+npm run dev
+```
