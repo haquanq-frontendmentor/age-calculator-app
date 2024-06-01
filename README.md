@@ -23,6 +23,7 @@ Users should be able to:
 ### Solution
 
 - Built with: `HTML` `CSS` `JS`
+- Mobile first workflow
 
 :link: [`Solution Link`](https://www.frontendmentor.io/solutions/only-html-and-css-i1rsBUEQ8I) :link: [`Live Site Link`](https://haquanq.github.io/fm-age-calculator-app/)
 
