@@ -5,25 +5,26 @@ Frontend Mentor challenges help you improve your coding skills by building reali
 
 ### The challenge
 
+- No access to design files :expressionless:
+
 Users should be able to:
 
-- View an age in years, months, and days after submitting a valid date through the form
+- View an age in years, months, and days after submitting a valid date through the form :yum:
 - Receive validation errors if:
-  - Any field is empty when the form is submitted
-  - The day number is not between 1-31
-  - The month number is not between 1-12
-  - The year is in the future
-  - The date is invalid e.g. 31/04/1991 (there are 30 days in April)
-- View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
-- **Bonus**: See the age numbers animate to their final number when the form is submitted
+  - Any field is empty when the form is submitted :yum:
+  - The day number is not between 1-31 :yum:
+  - The month number is not between 1-12 :yum:
+  - The year is in the future :yum:
+  - The date is invalid e.g. 31/04/1991 (there are 30 days in April) :yum:
+- View the optimal layout for the interface depending on their device's screen size :yum:
+- See hover and focus states for all interactive elements on the page :yum:
+- **Bonus**: See the age numbers animate to their final number when the form is submitted :yum:
 
 ### Solution
 
 - Built with: `HTML` `CSS` `JS`
 
-:link: [`Solution Link`](https://www.frontendmentor.io/solutions/only-html-and-css-i1rsBUEQ8I)
-:link: [`Live Site Link`](https://haquanq.github.io/fm-age-calculator-app/)
+:link: [`Solution Link`](https://www.frontendmentor.io/solutions/only-html-and-css-i1rsBUEQ8I) :link: [`Live Site Link`](https://haquanq.github.io/fm-age-calculator-app/)
 
 ![](./.docs/design/desktop-design.jpg)
 <br>
