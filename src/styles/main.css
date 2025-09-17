@@ -1,0 +1,17 @@
+@import "./base/fonts.css";
+@import "./base/variables.css";
+@import "./base/reset.css";
+
+@import "./components/text-field.css";
+@import "./components/calculator.css";
+
+@import "./utils/a11y.css";
+
+.main {
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    min-height: 100vh;
+}

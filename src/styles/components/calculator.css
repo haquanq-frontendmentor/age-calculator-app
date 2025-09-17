@@ -1,0 +1,89 @@
+.calculator {
+    background-color: var(--color-white);
+    border-radius: 1.5rem 1.5rem 6.25rem;
+    max-width: 52.5rem;
+    width: 100%;
+    padding: 3.125rem 1.5rem 2.75rem;
+    padding-block: 3rem 2.75rem;
+    padding-inline: clamp(1.5rem, -0.4084rem + 8.1425vw, 3.5rem);
+
+    @media (--tablet) {
+        border-bottom-right-radius: 12.5rem;
+        padding-block: calc(var(--space) * 14.75) calc(var(--space) * 15.25);
+    }
+
+    &__date {
+        display: flex;
+        gap: 1rem;
+        max-width: 34rem;
+
+        @media (--tablet) {
+            gap: 2rem;
+        }
+    }
+
+    &__form {
+        border-bottom: 2px solid var(--color-light-grey);
+        display: grid;
+        gap: 2rem;
+
+        @media (--tablet) {
+            gap: unset;
+        }
+    }
+
+    &__submit-btn {
+        --button-size: clamp(4rem, 2.0916rem + 8.1425vw, 6rem);
+
+        justify-self: center;
+        padding: 0;
+        z-index: 10;
+        width: var(--button-size);
+        height: var(--button-size);
+        border-radius: 9999px;
+        border: none;
+        background-color: var(--color-purple);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color ease 200ms;
+        margin-block-end: calc(-1 * calc(var(--button-size) / 2) - 1px);
+
+        @media (prefers-reduced-motion: reduce) {
+            transition: none;
+        }
+
+        @media (--tablet) {
+            justify-self: end;
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: var(--color-off-black);
+            }
+        }
+    }
+
+    &__result {
+        letter-spacing: -0.02em;
+        font-size: clamp(3.5rem, 0.6374rem + 12.2137vw, 6.5rem);
+        font-weight: var(--font-semi-black);
+        font-style: italic;
+        display: grid;
+        gap: 0.625rem;
+        padding-block-start: 4rem;
+
+        @media (--tablet) {
+            padding-block-start: 3.25rem;
+        }
+    }
+
+    &__result-value {
+        color: var(--color-purple);
+    }
+
+    &__result-text {
+        color: var(--color-off-black);
+    }
+}

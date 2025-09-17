@@ -1,0 +1,26 @@
+:root {
+    --color-purple: hsl(259, 100%, 65%);
+    --color-light-red: hsl(0, 100%, 67%);
+
+    --color-white: hsl(0, 0%, 100%);
+    --color-off-white: hsl(0, 0%, 94%);
+    --color-off-black: hsl(0, 0%, 8%);
+    --color-light-grey: hsl(0, 0%, 86%);
+    --color-smokey-grey: hsl(0, 1%, 44%);
+
+    --font-primary: "Poppins", system-ui, sans-serif;
+    --font-normal: 400;
+    --font-bold: 700;
+    --font-semi-black: 800;
+
+    --space: 0.25rem;
+
+    --leading-none: 1;
+
+    --focus-outline-color: var(--color-purple);
+    --focus-outline-width: 2px;
+    --focus-outline-offset: 2px;
+    --focus-outline-style: dashed;
+}
+
+@custom-media --tablet (min-width: 48em);

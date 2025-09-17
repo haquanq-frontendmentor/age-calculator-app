@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
+    <link rel="stylesheet" href="./styles/main.css" />
+
+    <title>Frontend Mentor | Age calculator app</title>
+  </head>
+  <body>
+    <main class="main">
+      <h1 class="sr-only">Age calculator app</h1>
+      <section class="calculator">
+        <form class="calculator__form" novalidate>
+          <div class="calculator__date">
+            <div class="text-field" id="day-text-field">
+              <label class="text-field__label" for="day-input">Day</label>
+              <input
+                class="text-field__input"
+                id="day-input"
+                type="text"
+                required
+                inputmode="numeric"
+                maxlength="2"
+                placeholder="DD"
+                aria-invalid="false"
+                aria-describedby="day-input-hint"
+              />
+              <span class="text-field__hint" id="day-input-hint"></span>
+            </div>
+            <div class="text-field" id="month-text-field">
+              <label class="text-field__label" for="month-input">Month</label>
+              <input
+                class="text-field__input"
+                id="month-input"
+                type="text"
+                required
+                inputmode="numeric"
+                maxlength="2"
+                placeholder="MM"
+                aria-invalid="false"
+                aria-describedby="month-input-hint"
+              />
+              <span class="text-field__hint" id="month-input-hint"></span>
+            </div>
+            <div class="text-field" id="year-text-field">
+              <label class="text-field__label" for="year-input">Year</label>
+              <input
+                class="text-field__input"
+                id="year-input"
+                type="text"
+                required
+                inputmode="numeric"
+                maxlength="4"
+                placeholder="YYYY"
+                aria-invalid="false"
+                aria-describedby="year-input-hint"
+              />
+              <span class="text-field__hint" id="year-input-hint"></span>
+            </div>
+          </div>
+          <button class="calculator__submit-btn" type="submit" aria-label="Calculate">
+            <img src="./assets/icons/icon-arrow.svg" alt="" />
+          </button>
+        </form>
+        <div class="calculator__result" aria-live="polite" aria-atomic="true">
+          <p class="calculator__result-item">
+            <span class="calculator__result-value" id="years">- -</span>
+            <span class="calculator__result-text">years</span>
+          </p>
+          <p class="calculator__result-item">
+            <span class="calculator__result-value" id="months">- -</span>
+            <span class="calculator__result-text">months</span>
+          </p>
+          <p class="calculator__result-item">
+            <span class="calculator__result-value" id="days">- -</span>
+            <span class="calculator__result-text">days</span>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
