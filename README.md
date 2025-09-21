@@ -47,7 +47,7 @@ Frontend Mentor challenges help you improve your coding skills by building reali
 
 Features
 
-- [x] Accessible form controls with validataions
+- [x] Accessible form controls with validations
 
 Accessibility
 
@@ -80,21 +80,22 @@ Accessibility
 
 Install the following:
 
-- Git (latest LTS recommended)
+- Git (latest version)
 - Node.js (latest LTS recommended)
+- pnpm (latest version)
 
 ### Setup
 
 ```
 git clone https://github.com/haquanq-frontendmentor/age-calculator-app.git
 cd age-calculator-app
-npm install
+pnpm install
 ```
 
 ### Start Development Server
 
 ```
-npm run dev
+pnpm dev
 ```
 
 ## :maple_leaf: Deployment
